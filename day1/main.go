@@ -20,20 +20,6 @@ const (
 	M   int = 500
 )
 
-// func max(x, y int) int {
-// 	if x > y {
-// 		return x
-// 	}
-// 	return y
-// }
-
-// func min(x, y int) int {
-// 	if x < y {
-// 		return x
-// 	}
-// 	return y
-// }
-
 var (
 
 )
@@ -54,12 +40,36 @@ func solve() {
 
 	res := 0
 	for _, n := range a {
-		n = n / 3 - 2
-		for n > 0 {
-			res += n
-			n = n / 3 - 2
+		res += n / 3 - 2
+	}
+
+	fprintf("%d\n", res)
+
+}
+
+func star() {
+
+	var a []int
+	end := false
+	for !end {
+		line, err := r.ReadString('\n')
+		if err != nil && err.Error() == "EOF" {
+			end = true
 		}
 
+		n, _ := strconv.Atoi(strings.TrimSpace(line))
+		a = append(a, n)
+	}
+
+	res := 0
+	for _, n := range a {
+		for n > 0 {
+			n = n / 3 - 2
+			if n <= 0 {
+				break
+			}
+			res += n
+		}
 	}
 
 	fprintf("%d\n", res)
@@ -102,7 +112,8 @@ func main() {
 	// fscan(&tt)
 
 	for i := 0; i < tt; i++ {
-		solve()
+		// solve()
+		star()
 	}
 
 }
