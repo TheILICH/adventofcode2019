@@ -4,12 +4,12 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strings"
+	// "strings"
 
 	// "io"
 	// "sort"
 	// "strings"
-	"strconv"
+	// "strconv"
 	// "container/list"
 )
 
@@ -25,54 +25,10 @@ var (
 )
 
 func first() {
-
-	var a []int
-	end := false
-	for !end {
-		line, err := r.ReadString('\n')
-		if err != nil && err.Error() == "EOF" {
-			end = true
-		}
-
-		n, _ := strconv.Atoi(strings.TrimSpace(line))
-		a = append(a, n)
-	}
-
-	res := 0
-	for _, n := range a {
-		res += n / 3 - 2
-	}
-
-	fprintf("%d\n", res)
-
+	
 }
 
 func second() {
-
-	var a []int
-	end := false
-	for !end {
-		line, err := r.ReadString('\n')
-		if err != nil && err.Error() == "EOF" {
-			end = true
-		}
-
-		n, _ := strconv.Atoi(strings.TrimSpace(line))
-		a = append(a, n)
-	}
-
-	res := 0
-	for _, n := range a {
-		for n > 0 {
-			n = n / 3 - 2
-			if n <= 0 {
-				break
-			}
-			res += n
-		}
-	}
-
-	fprintf("%d\n", res)
 
 }
 
@@ -112,7 +68,7 @@ func main() {
 	// fscan(&tt)
 
 	for i := 0; i < tt; i++ {
-        second()
+		first()
 	}
 
 }
